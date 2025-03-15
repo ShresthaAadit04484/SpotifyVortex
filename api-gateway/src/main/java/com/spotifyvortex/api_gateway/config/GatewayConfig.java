@@ -18,7 +18,11 @@ public class GatewayConfig {
                     // .rewritePath("/api/users/(?<segment>.*)", "/users/${segment}"))
                     // .addRequestHeader("X-Gateway-Source", "api-gateway"))
                 .uri("lb://user-service"))
-            // You can add more routes for other services here
+            
+           // You can add more routes for other services here
+            .route("auth-service-route", r -> r
+                .path("/api/auth/**")
+                .uri("lb://auth-service"))
             .build();
     }
 }
