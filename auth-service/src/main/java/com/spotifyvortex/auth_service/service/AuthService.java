@@ -72,7 +72,7 @@ public class AuthService {
                 refreshToken,
                 userId,
                 userDetails.getUsername(),
-                userDTO != null ? userDTO.getRole().getRole() : "USER"
+                userDTO != null ? userDTO.getRole().getRole() : "ROLE_USER"
         );
     }
 
